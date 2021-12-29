@@ -11,7 +11,7 @@ This container is derived from jenkins/jenkins:lts-jdk11 with the following comp
 To start the container, run the following command:
 
 ```sh
-$ docker build --rm -t local/jenkins:0.1 .
-$ docker run -p 8080:8080 -p 50000:50000 -v /your/home:/var/jenkins_home local/jenkins:0.1
-
+$ sudo nerdctl build -t jenkins:0.2 .
+$ mkdir jenkins_home
+$ sudo nerdctl run --rm -p 8080:8080 -p 50000:50000 -v ${PWD}/jenkins_home:/var/jenkins_home jenkins:0.2
 ```
